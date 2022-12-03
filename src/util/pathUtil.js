@@ -607,7 +607,7 @@ export const animateBellmanFord = (
   setIsVisualizing,
   setVisualized
 ) => {
-  let { path, visitedOrdered } = dijakstra(grid, start, target, R, C);
+  let { path, visitedOrdered } = bellmanFord(grid, start, target, R, C);
 
   function animateSP(nodes) {
     for (let i = 0; i <= nodes.length; i++) {
