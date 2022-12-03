@@ -1,0 +1,29 @@
+{
+  "algorithms": {
+    "path": {
+      "bfs": {
+        "description": "[Breadth-First Search (BFS)] is an algorithm for searching a tree data structure for a node that satisfies a given property."
+      },
+      "dijakstra's": {
+        "description": "[Dijakstra's] algorithm is an algorithm for finding the shortest paths between nodes in a graph, which may represent, for example, road networks"
+      },
+      "a*": {
+        "description": "[A*] description"
+      },
+      "bellman-ford": {
+        "description": "[Bellman-Ford] algorithm is an algorithm that computes shortest paths from a single source vertex to all of the other vertices in a weighted digraph."
+      }
+    },
+    "sort": {
+      "merge sort": {
+        "description": "[Merge Sort] is a divide-and-conquer, an efficient, general-purpose, and comparison-based sorting algorithm "
+      },
+      "quick sort": {
+        "description": "[Quick Sort] is a divide-and-conquer algorithm. It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot."
+      },
+      "bubble sort": {
+        "description": "[Bubble sort] is a simple sorting algorithm that repeatedly steps through the input list element by element, comparing the current element with the one after it, swapping their values if needed."
+      }
+    }
+  }
+}

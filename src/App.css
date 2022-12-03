@@ -1,0 +1,273 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Navbar */
+
+.Navbar {
+  background-color: var(--bs-primary);
+  height: 75px;
+  width: 100%;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  color: var(--bs-white);
+  margin: 0;
+  padding: 0;
+}
+
+.nav-items-left li:hover {
+  color: var(--bs-dark);
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.nav-items ul li {
+  cursor: pointer;
+  padding: 0 1rem;
+}
+
+.dropbtn {
+  background-color: transparent;
+  color: var(--bs-white);
+  padding: 1rem;
+  font-size: 1rem;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--bs-light);
+  min-width: 150px;
+  transform: translateX(-50px);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content li {
+  color: var(--bs-black);
+  margin: 0.75rem 1.25rem 0.75rem 0;
+  text-align: left;
+  display: block;
+}
+
+.dropdown-content li:hover {
+  color: var(--bs-primary);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.logo {
+  font-weight: bolder;
+}
+
+/* Legend */
+
+.Legend {
+  background-color: var(--bs-light);
+  padding: 1rem 0;
+}
+
+.legend-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100px;
+  margin: 0 0.5rem;
+}
+
+.legend-items li {
+  display: flex;
+}
+
+.legend-items li p {
+  padding-left: 0.5rem;
+}
+
+.loading {
+  width: 75%;
+  height: 50px;
+  background-color: var(--bs-primary);
+}
+
+/* PathTable Nodes */
+
+.Cell {
+  height: 25px;
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visitedAnimated {
+  background-color: var(--bs-primary);
+  border: 1px solid var(--bs-primary);
+  animation-name: forvisited;
+  animation-duration: 0.5s;
+}
+
+.visited {
+  background-color: var(--bs-primary);
+  border: 1px solid var(--bs-primary);
+}
+
+.wall {
+  background-color: var(--bs-black);
+  border: 1px solid var(--bs-black);
+  animation-name: forwall;
+  animation-duration: 0.25s;
+}
+
+.unvisited {
+  background-color: var(--bs-white);
+  border: 1px solid var(--bs-primary);
+}
+
+.pathAnimated {
+  background-color: var(--bs-yellow);
+  border: 1px solid var(--bs-yellow);
+  animation-name: forpath;
+  animation-duration: 1s;
+}
+
+.path {
+  background-color: var(--bs-yellow);
+  border: 1px solid var(--bs-yellow);
+}
+
+.weightedCyrcle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bs-black);
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  border-radius: 50%;
+}
+
+.weighted {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: var(--bs-white);
+  text-align: center;
+}
+
+/* Sorting Table */
+
+#table-items {
+  transform: rotate(180deg);
+  transform: rotateX(180deg);
+}
+
+.slidecontainer {
+  position: absolute;
+  left: 89%;
+  width: 10%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  background: var(--bs-white);
+  border: 1px solid var(--bs-black);
+  border-radius: 20px;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: var(--bs-primary);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.unordered {
+  background-color: var(--bs-white);
+  border: 1px solid var(--bs-primary);
+}
+
+.sorted {
+  background-color: var(--bs-primary);
+  border: 1px solid var(--bs-primary);
+}
+
+.legend-sort {
+  height: 25px;
+  width: 25px;
+}
+
+/* Animations */
+
+@keyframes forpath {
+  from {
+    background-color: var(--bs-primary);
+  }
+
+  to {
+    background-color: var(--bs-warning);
+  }
+}
+
+@keyframes forvisited {
+  from {
+    background-color: var(--bs-white);
+  }
+
+  to {
+    background-color: var(--bs-primary);
+  }
+}
+
+@keyframes forwall {
+  from {
+    background-color: var(--bs-white);
+  }
+
+  to {
+    background-color: var(--bs-black);
+  }
+}
