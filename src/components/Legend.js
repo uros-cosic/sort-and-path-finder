@@ -42,7 +42,8 @@ function Legend() {
               <li className="list-group-item d-flex">
                 <div className="Cell path" /> <p>Path Node</p>
               </li>
-              {state.algorithm === "dijakstra's" && (
+              {(state.algorithm === "dijakstra's" ||
+                state.algorithm === "bellman-ford") && (
                 <li className="list-group-item d-flex">
                   <div
                     className="Cell weightedCyrcle justify-content-center align-items-center text-center"

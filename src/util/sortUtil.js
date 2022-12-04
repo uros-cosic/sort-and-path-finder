@@ -1,9 +1,10 @@
-import { v4 as uuidv4 } from "uuid";
+import { quickSort } from "./algorithms/quickSort";
+import { mergeSort } from "./algorithms/mergeSort";
+import { bubbleSort, bsSwap } from "./algorithms/bubbleSort";
 
 function Node(type, height) {
   this.type = type;
   this.height = height;
-  this.id = uuidv4();
 }
 
 export const generateRandomArray = (numNodes, maxHeight) => {
@@ -19,39 +20,7 @@ export const generateRandomArray = (numNodes, maxHeight) => {
   return res;
 };
 
-/* ALGORITHMS */
-
 /* QuickSort */
-
-const quickSort = (arr, left, right, swapOrdered = null) => {
-  if (left >= right) return;
-
-  const p = partition(arr, left, right, swapOrdered);
-
-  quickSort(arr, left, p - 1, swapOrdered);
-  quickSort(arr, p + 1, right, swapOrdered);
-};
-
-const partition = (arr, left, right, swapOrdered) => {
-  const pivot = arr[right];
-  let j = left - 1;
-  for (let i = left; i < right; i++) {
-    if (arr[i].height < pivot.height) {
-      j += 1;
-      let temp = arr[j];
-      arr[j] = arr[i];
-      arr[i] = temp;
-      if (swapOrdered) swapOrdered.push([i, j]);
-    }
-  }
-
-  let temp = arr[j + 1];
-  arr[j + 1] = arr[right];
-  arr[right] = temp;
-  swapOrdered.push([j + 1, right]);
-
-  return j + 1;
-};
 
 export const visualizeQuickSort = (arr) => {
   let newArr = arr.slice();
@@ -129,46 +98,6 @@ export const animateSorted = (
 
 /* Merge Sort */
 
-function mergeSort(arr, left, right, animate = []) {
-  if (left >= right) return;
-  const middle = left + parseInt((right - left) / 2);
-  mergeSort(arr, left, middle, animate);
-  mergeSort(arr, middle + 1, right, animate);
-  merge(arr, left, middle, right, animate);
-}
-
-function merge(arr, left, middle, right, animate) {
-  let L = new Array(middle - left + 1);
-  let R = new Array(right - middle);
-
-  for (let i = 0; i < L.length; i++) L[i] = arr[left + i];
-  for (let i = 0; i < R.length; i++) R[i] = arr[middle + i + 1];
-
-  let i = 0;
-  let j = 0;
-  let k = left;
-
-  while (i < L.length && j < R.length) {
-    if (L[i].height <= R[j].height) {
-      animate.push([k, L[i]]);
-      arr[k++] = L[i++];
-    } else {
-      animate.push([k, R[j]]);
-      arr[k++] = R[j++];
-    }
-  }
-
-  while (i < L.length) {
-    animate.push([k, L[i]]);
-    arr[k++] = L[i++];
-  }
-
-  while (j < R.length) {
-    animate.push([k, R[j]]);
-    arr[k++] = R[j++];
-  }
-}
-
 export const visualizeMergeSort = (arr) => {
   mergeSort(arr, 0, arr.length - 1);
   return arr;
@@ -207,22 +136,6 @@ export const animateMergeSort = (
 };
 
 /* Bubble Sort */
-function bubbleSort(arr, animate = []) {
-  for (let i = 0; i < arr.length - 1; i++) {
-    for (let j = 0; j < arr.length - i - 1; j++) {
-      if (arr[j].height > arr[j + 1].height) {
-        animate.push([j, j + 1]);
-        bsSwap(arr, j, j + 1);
-      }
-    }
-  }
-}
-
-const bsSwap = (arr, x, y) => {
-  let temp = arr[x];
-  arr[x] = arr[y];
-  arr[y] = temp;
-};
 
 export const visualizeBubbleSort = (arr) => {
   bubbleSort(arr, []);
