@@ -68,8 +68,9 @@ function PathFinderTable() {
     const { row, col } = calculateGridSize(y, x, btnsDivHeight);
     const start = new CellNode(1, 1);
     const target = new CellNode(row - 2, col - 2);
+    const grid = makeGrid(row, col, start, target);
     setTable({
-      grid: makeGrid(row, col, start, target),
+      grid,
       start,
       target,
       row_len: row,

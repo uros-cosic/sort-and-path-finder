@@ -7,11 +7,8 @@
       "dijakstra's": {
         "description": "[Dijakstra's] algorithm is an algorithm for finding the shortest paths between nodes in a graph, which may represent, for example, road networks"
       },
-      "a*": {
-        "description": "[A*] description"
-      },
       "bellman-ford": {
-        "description": "[Bellman-Ford] algorithm is an algorithm that computes shortest paths from a single source vertex to all of the other vertices in a weighted digraph."
+        "description": "[Bellman-Ford] algorithm is an algorithm that computes shortest paths from a single source vertex to all of the other vertices in a weighted digraph. NOTE: This algorithm computes very slowly with current implementation"
       }
     },
     "sort": {
