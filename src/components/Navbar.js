@@ -1,8 +1,12 @@
 import { useContext } from "react";
 import { StateContext } from "../stateContext";
 
+import data from "../data/data.json";
+
 function Navbar() {
   const { state, setState } = useContext(StateContext);
+
+  console.log(Object.keys(data.algorithms[state.mode]));
 
   const handleDropClick = (e) => {
     setState({
@@ -52,49 +56,17 @@ function Navbar() {
           <div className="dropdown">
             <li className="dropbtn list-group-item">Algorithm</li>
             <div className="dropdown-content">
-              {state.mode === "path" ? (
-                <>
+              {Object.keys(data.algorithms[state.mode]).map((item, idx) => {
+                return (
                   <li
+                    key={idx}
                     className="list-group-item"
-                    onClick={(e) => handleDropClick(e)}
+                    onClick={handleDropClick}
                   >
-                    BFS
+                    {item.toUpperCase()}
                   </li>
-                  <li
-                    className="list-group-item"
-                    onClick={(e) => handleDropClick(e)}
-                  >
-                    Dijakstra's
-                  </li>
-                  <li
-                    className="list-group-item"
-                    onClick={(e) => handleDropClick(e)}
-                  >
-                    Bellman-Ford
-                  </li>
-                </>
-              ) : (
-                <>
-                  <li
-                    className="list-group-item"
-                    onClick={(e) => handleDropClick(e)}
-                  >
-                    Quick Sort
-                  </li>
-                  <li
-                    className="list-group-item"
-                    onClick={(e) => handleDropClick(e)}
-                  >
-                    Merge Sort
-                  </li>
-                  <li
-                    className="list-group-item"
-                    onClick={(e) => handleDropClick(e)}
-                  >
-                    Bubble Sort
-                  </li>
-                </>
-              )}
+                );
+              })}
             </div>
           </div>
         </ul>
