@@ -1,6 +1,6 @@
 import { Cell } from "./Cell";
 import { BFS } from "./algorithms/breadthFirstSearch";
-import { dijakstra } from "./algorithms/dijakstra";
+import { dijkstra } from "./algorithms/dijkstras";
 import { bellmanFord } from "./algorithms/bellmanFord";
 import { dfs } from "./algorithms/dfs";
 
@@ -218,8 +218,8 @@ export function animateDFS(
   }
 }
 
-export const visualizeDijakstra = (grid, start, target, R, C) => {
-  const { path, visitedOrdered } = dijakstra(grid, start, target, R, C);
+export const visualizeDijkstra = (grid, start, target, R, C) => {
+  const { path, visitedOrdered } = dijkstra(grid, start, target, R, C);
   for (let node of visitedOrdered) {
     node.type = "visited";
   }
@@ -230,7 +230,7 @@ export const visualizeDijakstra = (grid, start, target, R, C) => {
   return grid;
 };
 
-export const animateDijakstra = (
+export const animateDijkstra = (
   grid,
   start,
   target,
@@ -242,7 +242,7 @@ export const animateDijakstra = (
   visSpeed = 1,
   pathSpeed = 10
 ) => {
-  let { path, visitedOrdered } = dijakstra(grid, start, target, R, C);
+  let { path, visitedOrdered } = dijkstra(grid, start, target, R, C);
 
   function animateSP(nodes) {
     for (let i = 0; i <= nodes.length; i++) {

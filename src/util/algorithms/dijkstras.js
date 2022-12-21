@@ -1,4 +1,4 @@
-/* Dijakstra's */
+/* Dijkstra's */
 
 class PriorityQueue {
   constructor() {
@@ -125,7 +125,7 @@ function convertToAdjList(grid, R, C) {
 
 // Can improve performance using Indexed Priority Queue
 
-export function dijakstra(grid, start, target, R, C) {
+export function dijkstra(grid, start, target, R, C) {
   let adjList = convertToAdjList(grid, R, C);
   let visited = {};
   let dist = {};

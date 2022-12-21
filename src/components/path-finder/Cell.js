@@ -13,7 +13,7 @@ function Cell(props) {
       ) : props.cell.target ? (
         <Image node="target" />
       ) : (
-        props.algorithm === "dijakstra's" &&
+        props.algorithm === "dijkstra's" &&
         props.cell.weight > 0 && (
           <div className="weightedCyrcle">
             <div className="weighted">{props.cell.weight}</div>

@@ -11,10 +11,10 @@ import {
   animateBFS,
   gridWallToggle,
   nodeToggle,
-  visualizeDijakstra,
+  visualizeDijkstra,
   // visualizeBellmanFord,
   // animateBellmanFord,
-  animateDijakstra,
+  animateDijkstra,
   animateDFS,
   visualizeDFS,
   clearGrid,
@@ -48,9 +48,9 @@ function PathFinderTable() {
         animate: animateBFS,
         visualize: visualizeBFS,
       },
-      "dijakstra's": {
-        animate: animateDijakstra,
-        visualize: visualizeDijakstra,
+      "dijkstra's": {
+        animate: animateDijkstra,
+        visualize: visualizeDijkstra,
       },
       // "bellman-ford": {
       //   animate: animateBellmanFord,
