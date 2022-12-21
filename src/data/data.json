@@ -2,13 +2,13 @@
   "algorithms": {
     "path": {
       "bfs": {
-        "description": "[Breadth-First Search (BFS)] is an algorithm for searching a tree data structure for a node that satisfies a given property."
+        "description": "[Breadth-First Search (BFS)] is an algorithm for searching a tree data structure for a node that satisfies a given property. It guarantees a shortest path on a unweighted graph."
       },
       "dijakstra's": {
-        "description": "[Dijakstra's] algorithm is an algorithm for finding the shortest paths between nodes in a graph, which may represent, for example, road networks"
+        "description": "[Dijakstra's] algorithm is an algorithm for finding the shortest paths between nodes in a graph, which may represent, for example, road networks. It guarantees the shortest path"
       },
-      "bellman-ford": {
-        "description": "[Bellman-Ford] algorithm is an algorithm that computes shortest paths from a single source vertex to all of the other vertices in a weighted digraph. NOTE: This algorithm computes very slowly with current implementation"
+      "dfs": {
+        "description": "[Depth-first search (DFS)] is an algorithm for traversing or searching tree or graph data structures. It doesn't guarantee the shortest path"
       }
     },
     "sort": {

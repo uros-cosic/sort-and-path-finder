@@ -1,6 +1,6 @@
 /* Bellman-Ford */
 
-/* Very slow performance */
+/* TODO: Better Implementation */
 
 function Edge(from, to, cost) {
   this.from = from;
@@ -27,10 +27,7 @@ const convertToEdgeList = (arr, R, C) => {
   };
 
   for (let i = 0; i < R; i++) {
-    for (let j = 0; j < C; j++) {
-      if (arr[i][j].type === "wall") continue;
-      explore_neighbours(i, j, edgeList);
-    }
+    for (let j = 0; j < C; j++) explore_neighbours(i, j, edgeList);
   }
 
   return {

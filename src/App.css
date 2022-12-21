@@ -95,6 +95,10 @@ a {
   padding: 1rem 0;
 }
 
+.err-text {
+  position: absolute;
+}
+
 .legend-items {
   display: flex;
   flex-direction: column;
@@ -238,6 +242,20 @@ a {
 .legend-sort {
   height: 25px;
   width: 25px;
+}
+
+.sortingTable-buttons,
+.pathTable-buttons {
+  position: relative;
+}
+
+#pathFinderError,
+#sortingTableError {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--bs-danger);
 }
 
 /* Animations */

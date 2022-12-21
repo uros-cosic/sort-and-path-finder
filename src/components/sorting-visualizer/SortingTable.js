@@ -131,7 +131,7 @@ function SortingTable() {
           <FaRedoAlt className="mx-1" />
           Generate New Array
         </button>
-        <p id="sortingTableError" className="text-danger p-0 m-0"></p>
+        <p id="sortingTableError" className="p-0 m-0"></p>
         <div className="slidecontainer">
           <label htmlFor="" className="justify-content-between">
             Sorting Speed

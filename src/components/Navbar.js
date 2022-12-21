@@ -6,8 +6,6 @@ import data from "../data/data.json";
 function Navbar() {
   const { state, setState } = useContext(StateContext);
 
-  console.log(Object.keys(data.algorithms[state.mode]));
-
   const handleDropClick = (e) => {
     setState({
       algorithm: e.target.innerText.toLowerCase(),

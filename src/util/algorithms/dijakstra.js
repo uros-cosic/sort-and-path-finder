@@ -136,7 +136,6 @@ export function dijakstra(grid, start, target, R, C) {
   let pq = new PriorityQueue();
   pq.add([s, 0]);
 
-  // Can improve performance by stoping early (target found)
   while (!pq.isEmpty()) {
     const [id, minVal] = pq.poll();
     visited[id] = true;

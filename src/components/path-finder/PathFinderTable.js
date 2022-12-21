@@ -12,9 +12,11 @@ import {
   gridWallToggle,
   nodeToggle,
   visualizeDijakstra,
-  visualizeBellmanFord,
-  animateBellmanFord,
+  // visualizeBellmanFord,
+  // animateBellmanFord,
   animateDijakstra,
+  animateDFS,
+  visualizeDFS,
   clearGrid,
 } from "../../util/pathUtil";
 import { Cell as CellNode } from "../../util/Cell";
@@ -50,9 +52,13 @@ function PathFinderTable() {
         animate: animateDijakstra,
         visualize: visualizeDijakstra,
       },
-      "bellman-ford": {
-        animate: animateBellmanFord,
-        visualize: visualizeBellmanFord,
+      // "bellman-ford": {
+      //   animate: animateBellmanFord,
+      //   visualize: visualizeBellmanFord,
+      // },
+      dfs: {
+        animate: animateDFS,
+        visualize: visualizeDFS,
       },
     };
     if (!available[algorithmName]) return null;
@@ -260,7 +266,7 @@ function PathFinderTable() {
         >
           <FaTrashAlt className="mx-1" /> Clear
         </button>
-        <p id="pathFinderError" className="text-danger p-0 m-0 text-center"></p>
+        <p id="pathFinderError" className="p-1 m-0"></p>
       </div>
       {table.grid.length ? (
         <div className="pathTable-items d-flex flex-column justify-content-center align-items-center">

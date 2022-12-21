@@ -2,6 +2,7 @@ import { Cell } from "./Cell";
 import { BFS } from "./algorithms/breadthFirstSearch";
 import { dijakstra } from "./algorithms/dijakstra";
 import { bellmanFord } from "./algorithms/bellmanFord";
+import { dfs } from "./algorithms/dfs";
 
 const rngWeight = (max = 100, min = 1) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -37,6 +38,7 @@ export const makeGrid = (
   target.type = "unvisited";
   res[start.x][start.y] = start;
   res[target.x][target.y] = target;
+
   return res;
 };
 
@@ -129,6 +131,62 @@ export function animateBFS(
   pathSpeed = 10
 ) {
   let { path, visitedOrdered } = BFS(grid, start, target, R, C);
+
+  function animateSP(nodes) {
+    for (let i = 0; i <= nodes.length; i++) {
+      setTimeout(() => {
+        if (i === nodes.length) {
+          setIsVisualizing(false);
+          setVisualized(true);
+          return;
+        }
+        const node = nodes[i];
+        grid[node.x][node.y].type = "pathAnimated";
+        updateGrid(grid);
+      }, pathSpeed * i);
+    }
+  }
+
+  for (let i = 0; i <= visitedOrdered.length; i++) {
+    if (i === visitedOrdered.length) {
+      setTimeout(() => {
+        animateSP(path);
+      }, visSpeed * i);
+      return;
+    }
+    setTimeout(() => {
+      const node = visitedOrdered[i];
+      grid[node.x][node.y].type = "visitedAnimated";
+      updateGrid(grid);
+    }, visSpeed * i);
+  }
+}
+
+export function visualizeDFS(grid, start, target, R, C) {
+  let res = grid.slice();
+  let { path, visitedOrdered } = dfs(grid, start, target, R, C);
+  for (let node of visitedOrdered) {
+    res[node.x][node.y].type = "visited";
+  }
+  for (let node of path) {
+    res[node.x][node.y].type = "path";
+  }
+  return res;
+}
+
+export function animateDFS(
+  grid,
+  start,
+  target,
+  R,
+  C,
+  updateGrid,
+  setIsVisualizing,
+  setVisualized,
+  visSpeed = 1,
+  pathSpeed = 10
+) {
+  let { path, visitedOrdered } = dfs(grid, start, target, R, C);
 
   function animateSP(nodes) {
     for (let i = 0; i <= nodes.length; i++) {
